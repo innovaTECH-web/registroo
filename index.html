@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Registrate</title>
+  <style>
+body{
+    background-color: black;
+}
+form {
+  color: white;
+}
+
+
+h1 {
+  text-align: center;
+  color: red;
+}
+
+  </style>
+</head>
+<body>
+  <center>
+    <br>
+    <br>
+    <br>
+    <h1>Formulario De Registro</h1>
+    <form onsubmit="guardarDatos(event)">
+      <label for="nombre">Nombre:</label>
+      <br>
+      <input type="text" id="nombre" name="nombre" required>
+      <br>
+      <br>
+      <label for="email">Email:</label>
+      <br>
+      <input type="email" id="email" name="email" required>
+      <br>
+      <br>
+      <label for="password">Contraseña:</label>
+      <br>  
+      <input type="password" id="password" name="password" required>
+      <br>
+      <br>
+      <input type="submit" value="Registrarse">
+    </form>
+
+      <h4 style="color: white;">   Ya tenes cuenta!!
+        Inicia sesion aqui abajo</h4>
+        <a href="https://innovatech-web.github.io/login/"><button>Iniciar Sesion</button></a>
+
+    
+  
+  </center>
+
+  <script>
+    function guardarDatos(event) {
+      event.preventDefault(); // prevenir envío del formulario
+      
+      const nombre = document.getElementById('nombre').value;
+      const email = document.getElementById('email').value;
+      const password = document.getElementById('password').value;
+      
+      // Guardar datos en localStorage
+      localStorage.setItem('nombre', nombre);
+      localStorage.setItem('email', email);
+      localStorage.setItem('password', password);
+      
+      alert('¡Registro exitoso!');
+      
+      // Limpiar campos del formulario
+      document.getElementById('nombre').value = '';
+      document.getElementById('email').value = '';
+      document.getElementById('password').value = '';
+    }
+    
+  </script>
+</body>
+</html>
